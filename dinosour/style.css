@@ -31,7 +31,7 @@ body{
 } 
 @keyframes jump{
     0%{bottom: 0%;} 
-    30%{bottom: 35%;} 
+    30%{bottom: 30%;} 
     70%{bottom: 30%;} 
     100%{bottom: 0%;}
 }
@@ -39,11 +39,11 @@ body{
 .block{
     position: absolute; 
     bottom: 0%; 
-    left: 80%;
+    left: 9%;
     background-color: red;
     width: 6%; 
     height: 15%;
-    animation: block-running 1000ms infinite linear;
+    animation: block-running 3000ms infinite linear;
 }
 
 @keyframes block-running {

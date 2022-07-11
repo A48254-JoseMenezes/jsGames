@@ -7,7 +7,9 @@ var blockRec = block.getBoundingClientRect()
 
 
 console.log(playerRec.bottom) 
-console.log(blockRec.top)
+console.log(blockRec.left) 
+console.log(playerRec.left)
+console.log(playerRec.width) 
 
 
 window.addEventListener("keydown", (e)=>{ 
@@ -28,12 +30,21 @@ function jump_character(key){
 
 setInterval(()=>{
     check_dead()
-}, 100)
+}, 10)
 
 function check_dead(){
-  
+
+    blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"))
+    playerLeft = parseInt(window.getComputedStyle(player).getPropertyValue("left")) 
+    playerBottom = parseInt(window.getComputedStyle(player).getPropertyValue("bottom")) 
+    blockTop = parseInt(window.getComputedStyle(block).getPropertyValue("top"))
+    //console.log(blockLeft)
+    //console.log(playerRec.left)
+    console.log(playerBottom)
+    console.log(blockTop ) 
     
-    if( playerRec.bottom >=  blockRec.top && playerRec.left < blockRec.left  ){
+
+    if( playerBottom <=  blockRec.top /*&& blockLeft > playerLeft && blockLeft < playerRec.width + playerLeft */ ){
         console.log("hello")
         //player.classList.remove("jump-player") 
         //block.attributes
